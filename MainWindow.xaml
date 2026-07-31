@@ -87,7 +87,11 @@
                 <Border Style="{StaticResource Card}">
                     <StackPanel>
                         <TextBlock Text="Arquivo de resposta (opcional)" FontFamily="Segoe UI Semibold" FontSize="17" />
-                        <TextBlock Text="Use um unattend.xml próprio. O conteúdo será copiado sem alterações." Foreground="{StaticResource TextSecondary}" Margin="0,4,0,12" />
+                        <TextBlock Text="Use um unattend.xml próprio. O conteúdo será copiado sem alterações." Foreground="{StaticResource TextSecondary}" Margin="0,4,0,5" />
+                        <TextBlock Margin="0,0,0,12" Foreground="{StaticResource TextSecondary}">
+                            <Run Text="Ainda não tem um arquivo? Crie um gratuitamente em " />
+                            <Hyperlink NavigateUri="https://schneegans.de/windows/unattend-generator/" RequestNavigate="UnattendGenerator_RequestNavigate" Foreground="#A398FF">schneegans.de/windows/unattend-generator</Hyperlink>
+                        </TextBlock>
                         <Grid Margin="0,0,0,12">
                             <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
                             <TextBox x:Name="CustomUnattendTextBox" IsReadOnly="True" VerticalContentAlignment="Center" />

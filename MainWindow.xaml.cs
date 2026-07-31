@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Collections.ObjectModel;
 using System.Xml.Linq;
 using System.Windows;
+using System.Windows.Navigation;
 using Win11IsoBypass.Services;
 
 namespace Win11IsoBypass;
@@ -99,6 +100,12 @@ public partial class MainWindow : Window
 
         if (dialog.ShowDialog(this) == true)
             CustomUnattendTextBox.Text = dialog.FileName;
+    }
+
+    private void UnattendGenerator_RequestNavigate(object sender, RequestNavigateEventArgs e)
+    {
+        Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+        e.Handled = true;
     }
 
     private void Win11BypassCheckBox_Changed(object sender, RoutedEventArgs e)
