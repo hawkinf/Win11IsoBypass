@@ -6,6 +6,10 @@ Freeware desenvolvido por **Aguinaldo Liesack Baptistini**.
 
 Projeto: <https://github.com/hawkinf/Win11IsoBypass>
 
+Documentação: [guia de uso](docs/USAGE.md) · [arquitetura](docs/ARCHITECTURE.md) · [changelog](CHANGELOG.md) · [licença](LICENSE)
+
+![Build](https://github.com/hawkinf/Win11IsoBypass/actions/workflows/build.yml/badge.svg)
+
 ## O que ele faz
 
 - preserva a ISO original;
@@ -32,6 +36,10 @@ Download oficial do Windows ADK: <https://learn.microsoft.com/windows-hardware/g
 dotnet build -c Release
 ```
 
+O projeto usa .NET 10 e WPF, portanto a compilação deve ser feita em Windows.
+O workflow do GitHub Actions executa a compilação automaticamente em cada
+push ou pull request.
+
 ## Gerar executável independente
 
 ```powershell
@@ -49,3 +57,10 @@ As imagens aparecem após a seleção da ISO. Todas começam marcadas; as desmar
 ## Limitações
 
 Este método é voltado à instalação iniciada pela mídia. Ele remove bloqueios do instalador, mas não emula recursos físicos. Windows 11 continua exigindo arquitetura x64, e versões recentes podem não iniciar em processadores sem determinadas instruções. Instalações em hardware não homologado não têm garantia de suporte ou atualizações da Microsoft.
+
+## Créditos e links
+
+- Autor: Aguinaldo Liesack Baptistini;
+- Projeto: <https://github.com/hawkinf/Win11IsoBypass>;
+- Gerador de `unattend.xml`: <https://schneegans.de/windows/unattend-generator/>;
+- `oscdimg`: ferramenta do Windows ADK, documentada pela Microsoft.
